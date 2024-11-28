@@ -34,7 +34,7 @@ class Game():
 
     def get_move(self):
         while True:
-            move = input(f'Enter a valid movie (example: A1): ').lower()
+            move = input(f'Enter a valid move (example: A1): ').lower()
             if move in ('a1','b1','c1','a2','b2','c2','a3','b3','c3') and self.board[move]==None:
                 self.board[move] = self.turn
                 break
