@@ -21,9 +21,9 @@ class Game():
         """)
 
     def print_message(self):
-        if(self.tie):
+        if self.tie:
             print('Tie game!')
-        elif(self.winner):
+        elif self.winner:
             print(f'{self.winner} wins the game!')
         else:
             print(f"It's player {self.turn}'s turn!")
@@ -35,7 +35,7 @@ class Game():
     def get_move(self):
         while True:
             move = input(f'Enter a valid movie (example: A1): ').lower()
-            if(move in ('a1','b1','c1','a2','b2','c2','a3','b3','c3') and self.board[move]==None):
+            if move in ('a1','b1','c1','a2','b2','c2','a3','b3','c3') and self.board[move]==None:
                 self.board[move] = self.turn
                 break
             else:
@@ -53,16 +53,16 @@ class Game():
             ('c1','b2','a3')
         ]
         for a,b,c in winning_combos:
-            if(self.board[a] and (self.board[a] == self.board[b] == self.board[c])):
+            if self.board[a] and (self.board[a] == self.board[b] == self.board[c]):
                 self.winner = self.turn
                 break
             
     def check_for_tie(self):
-        if(self.board['a1'] != None and self.board['b1'] != None and self.board['c1'] != None and self.board['a2'] != None and self.board['b2'] != None and self.board['c2'] != None and self.board['a3'] != None and self.board['b3'] != None and self.board['c3'] != None and self.winner == None):
+        if self.board['a1'] != None and self.board['b1'] != None and self.board['c1'] != None and self.board['a2'] != None and self.board['b2'] != None and self.board['c2'] != None and self.board['a3'] != None and self.board['b3'] != None and self.board['c3'] != None and self.winner == None:
             self.tie = True
 
     def switch_turn(self):
-        if(self.turn=='X'):
+        if self.turn=='X':
             self.turn = 'O'
         else:
             self.turn = 'X'
